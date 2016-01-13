@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
-
-using Microsoft.AspNet.Builder;
-
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -52,8 +49,6 @@ namespace api.tparnell.io
             }
 
             app.UseIISPlatformHandler();
-
-            app.UseStaticFiles();
 
             app.UseMvc(routes =>
             {
