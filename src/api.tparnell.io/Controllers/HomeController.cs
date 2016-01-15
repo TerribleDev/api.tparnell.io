@@ -12,7 +12,8 @@ namespace api.tparnell.io.Controllers
         private static readonly List<string> endpoints = new List<string> {
             "/Resume",
             "/Conference",
-            "/Websites"
+            "/Websites",
+            "/Social"
         };
 
         public IActionResult Index() => new JsonResult(endpoints, new Newtonsoft.Json.JsonSerializerSettings() { Formatting = Newtonsoft.Json.Formatting.Indented });

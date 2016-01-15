@@ -12,13 +12,26 @@ namespace api.tparnell.io.Controllers
     {
         private static readonly Dictionary<string, IEnumerable<string>> endpoints = new Dictionary<string, IEnumerable<string>>
         {
-            ["AboutMe"] = new List<string>() { "about.tommyparnell.com", "about.tparnell.io" },
-            ["Resume"] = new List<string>() { "resume.tommyparnell.com", "resume.tparnell.io" },
+            ["AboutMe"] = new List<string>() { "about.tparnell.io", "about.tommyparnell.com" },
+            ["Resume"] = new List<string>() { "resume.tparnell.io", "resume.tommyparnell.com" },
             ["LetMeLycosThatForYou"] = new List<string>() { "lmltfy.xyz" },
             ["api"] = new List<string>() { "api.tparnell.io" },
             ["dotnetmashup"] = new List<string>() { "dotnetmashup.azurewebsites.net" }
         };
 
-        public IActionResult Index() => new JsonResult(endpoints, new Newtonsoft.Json.JsonSerializerSettings() { Formatting = Newtonsoft.Json.Formatting.Indented });
+        [Route("~/Websites/{id?}")]
+        public IActionResult Index(string id)
+        {
+            if(string.IsNullOrWhiteSpace(id))
+            {
+                return new JsonResult(endpoints, new Newtonsoft.Json.JsonSerializerSettings() { Formatting = Newtonsoft.Json.Formatting.Indented });
+            }
+
+            if(endpoints.ContainsKey(id))
+            {
+                return Redirect(endpoints[id].First());
+            }
+            return HttpNotFound();
+        }
     }
 }
