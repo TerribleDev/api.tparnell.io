@@ -29,7 +29,7 @@ namespace api.tparnell.io.Controllers
 
             if(endpoints.ContainsKey(id))
             {
-                return Redirect(endpoints[id].First());
+                return Redirect("http://" + endpoints[id].First());
             }
             return HttpNotFound();
         }
