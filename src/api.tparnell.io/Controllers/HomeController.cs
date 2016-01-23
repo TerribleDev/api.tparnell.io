@@ -16,7 +16,8 @@ namespace api.tparnell.io.Controllers
             "/Resume",
             "/Conference",
             "/Websites",
-            "/Social"
+            "/Social",
+            "/Endpoints"
         };
 
         public HomeController(IHostingEnvironment env)
