@@ -49,7 +49,7 @@ namespace api.tparnell.io
             }
 
             app.UseIISPlatformHandler();
-
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

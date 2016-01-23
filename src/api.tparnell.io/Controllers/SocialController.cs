@@ -17,6 +17,6 @@ namespace api.tparnell.io.Controllers
             ["Github"] = "https://github.com/tparnell8"
         };
 
-        public IActionResult Index() => new JsonResult(endpoints, new Newtonsoft.Json.JsonSerializerSettings() { Formatting = Newtonsoft.Json.Formatting.Indented });
+        public IActionResult Index() => new JsonResult(endpoints);
     }
 }

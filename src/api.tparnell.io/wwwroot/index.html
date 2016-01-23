@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Bare - Start Bootstrap Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            padding-top: 70px;
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center">The Tommy Api</h2>
+            <div class="col-lg-12 text-center" style="margin-bottom: 25px">
+                <form class="form-inline" id="form1">
+                    <div class="form-group">
+                        <label for="urldata" class="sr-only">/Endpoints</label>
+                        <input type="text" class="form-control" id="urldata" value="/Endpoints">
+                    </div>
+                    <button type="submit" id="go" class="btn btn-primary">Go!</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="well" style="white-space: pre-wrap; text-align: left" id="result"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <!-- jQuery Version 1.11.1 -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" inntegrity="sha256-KX5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+    <script>
+        function go() {
+            $('#go').prop('disabled', true);
+            $.ajax({
+                url: $('#urldata').val()
+            })
+        .done(function (data) {
+            $('#result').text(JSON.stringify(data, undefined, 2));
+            $('#go').prop('disabled', false);
+        })
+        .error(function () {
+            $('#result').text("Error fetching data")
+            $('#go').prop('disabled', false);
+        });
+        }
+        go();
+        $('#form1').on('submit', function (event) {
+            event.preventDefault();
+            go();
+        })
+    </script>
+</body>
+</html>

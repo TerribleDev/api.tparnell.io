@@ -21,7 +21,7 @@ namespace api.tparnell.io.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return new JsonResult(Conferences, new Newtonsoft.Json.JsonSerializerSettings() { Formatting = Newtonsoft.Json.Formatting.Indented });
+            return new JsonResult(Conferences);
         }
     }
 }

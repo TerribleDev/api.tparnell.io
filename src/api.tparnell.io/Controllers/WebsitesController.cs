@@ -24,7 +24,7 @@ namespace api.tparnell.io.Controllers
         {
             if(string.IsNullOrWhiteSpace(id))
             {
-                return new JsonResult(endpoints, new Newtonsoft.Json.JsonSerializerSettings() { Formatting = Newtonsoft.Json.Formatting.Indented });
+                return new JsonResult(endpoints);
             }
 
             if(endpoints.ContainsKey(id))
