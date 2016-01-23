@@ -58,7 +58,12 @@
                 url: $('#urldata').val()
             })
         .done(function (data) {
-            $('#result').text(JSON.stringify(data, undefined, 2));
+            var result;
+            if (data.length < 1)
+                result = "";
+            else
+                result = JSON.stringify(data, undefined, 2)
+            $('#result').text(result);
             $('#go').prop('disabled', false);
         })
         .error(function () {

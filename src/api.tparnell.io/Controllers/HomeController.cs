@@ -25,8 +25,15 @@ namespace api.tparnell.io.Controllers
             this.env = env;
         }
 
-        public IActionResult Index() =>
-            new VirtualFileResult("index.html", new Microsoft.Net.Http.Headers.MediaTypeHeaderValue("text/html"));
+        public IActionResult Index()
+        {
+            var head = this.Request.Headers["X-Requested-With"];
+            if(head.Any())
+            {
+                return new EmptyResult();
+            }
+            return new VirtualFileResult("index.html", new Microsoft.Net.Http.Headers.MediaTypeHeaderValue("text/html"));
+        }
 
         [Route("Endpoints")]
         public IActionResult Endpoints() => new JsonResult(endpoints);
