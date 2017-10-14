@@ -55,7 +55,8 @@
         function go() {
             $('#go').prop('disabled', true);
             $.ajax({
-                url: $('#urldata').val()
+                url: $('#urldata').val(),
+                dataType: 'json'
             })
         .done(function (data) {
             var result;

@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9EE482C9-26E6-43DF-9C81-A4BE3ED75D67}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{68D81769-33DC-48FA-967A-0E1DB7DC254D}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "api.tparnell.io", "src\api.tparnell.io\api.tparnell.io.xproj", "{C3A3F90B-675C-419E-BC1D-811648F9B396}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.tparnell.io", "src\api.tparnell.io\api.tparnell.io.csproj", "{C3A3F90B-675C-419E-BC1D-811648F9B396}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,5 +25,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C3A3F90B-675C-419E-BC1D-811648F9B396} = {9EE482C9-26E6-43DF-9C81-A4BE3ED75D67}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73034B9A-E5E3-474B-9B04-8D2839069F37}
 	EndGlobalSection
 EndGlobal

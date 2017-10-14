@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,7 +14,7 @@ namespace api.tparnell.io.Controllers
         {
             ["Linkedin"] = "https://www.linkedin.com/in/tommy-parnell-63a72224",
             ["Twitter"] = "https://twitter.com/TerribleDev",
-            ["Github"] = "https://github.com/tparnell8"
+            ["Github"] = "https://github.com/terribledev"
         };
 
         public IActionResult Index() => new JsonResult(endpoints);
